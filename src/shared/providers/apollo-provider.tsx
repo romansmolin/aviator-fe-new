@@ -1,9 +1,40 @@
 "use client";
 
-import { ApolloProvider as Provider } from '@apollo/client';
-import client from '@/lib/apollo-client';
+import {
+  ApolloClient,
+  ApolloLink,
+  HttpLink,
+} from "@apollo/client";
+import {
+  ApolloNextAppProvider,
+  NextSSRApolloClient,
+  NextSSRInMemoryCache,
+  SSRMultipartLink,
+} from "@apollo/experimental-nextjs-app-support/ssr";
 
-//@ts-ignore
-export function ApolloProvider({ children }) {
-  return <Provider client={client}>{children}</Provider>;
+function makeClient() {
+  const httpLink = new HttpLink({
+      uri: "put your api endpoint here",
+  });
+
+  return new NextSSRApolloClient({
+    cache: new NextSSRInMemoryCache(),
+    link:
+      typeof window === "undefined"
+        ? ApolloLink.from([
+            new SSRMultipartLink({
+              stripDefer: true,
+            }),
+            httpLink,
+          ])
+        : httpLink,
+  });
+}
+
+export function ApolloProvider({ children }: React.PropsWithChildren) {
+  return (
+    <ApolloNextAppProvider makeClient={makeClient}>
+      {children}
+    </ApolloNextAppProvider>
+  );
 }

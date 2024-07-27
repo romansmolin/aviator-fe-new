@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const HeroSection = () => {
     return (
@@ -8,8 +9,14 @@ const HeroSection = () => {
                 bonuses daily, with 
                 <span className='text-primary font-bold m-0'> AviatorPlay</span>
             </h1>
-            <div className='col-span-3 rounded-lg bg-primary'>
-
+            <div className='col-span-3 rounded-2xl bg-primary'>
+                <Image 
+                    alt='Hero Section Image'
+                    src={'/hero-section.webp'}
+                    className='w-full h-full rounded-2xl'
+                    width={300}
+                    height={300}
+                />
             </div>
         </section>
     )

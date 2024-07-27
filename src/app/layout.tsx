@@ -23,9 +23,9 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={trispace.className}>
 				<Providers>
-					<div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+					<div className="grid min-h-screen w-full">
 						<Sidebar />
-						<div className="flex flex-col">
+						<div className="flex ml-72 flex-col">
 							<Header />
 							<MainContent>
 								{children}
