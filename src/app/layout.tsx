@@ -4,10 +4,10 @@ import "./globals.css";
 import Sidebar from "@/components/sidebar";
 import MainContent from "@/components/main-content";
 import Header from "@/components/header";
-import { ThemeProvider } from "@/shared/providers/theme-provider";
+import Providers from "@/shared/providers";
 
 const inter = Inter({ subsets: ["latin"] });
-const trispace = Trispace({subsets: ["latin"]})
+const trispace = Trispace({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -22,12 +22,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={trispace.className}>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="system"
-					enableSystem
-					disableTransitionOnChange
-				>
+				<Providers>
 					<div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
 						<Sidebar />
 						<div className="flex flex-col">
@@ -37,7 +32,7 @@ export default function RootLayout({
 							</MainContent>
 						</div>
 					</div>
-				</ThemeProvider>
+				</Providers>
 			</body>
 		</html>
 	);
