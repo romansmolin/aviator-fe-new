@@ -1,5 +1,4 @@
-import Home from "@/views/Home/Home";
-import Image from "next/image";
+import Home from "@/views/Home/home"
 
 export default function HomePage() {
   return <Home />
