@@ -1,6 +1,8 @@
 import React from 'react'
 import { getServerQuery } from '@/lib/apollo-client'
 import { GET_CASINO_BY_UUID } from '@/shared/schemas/casinos'
+import ReviewTopSection from './blocks/review-top-section'
+import ReviewComponent from './blocks/review-component'
 
 interface CasinoReviewProps {
     uuid: string
@@ -8,10 +10,20 @@ interface CasinoReviewProps {
 
 const CasinoReview: React.FC<CasinoReviewProps> = async ({ uuid }) => {
     const casinoReviewData = await getServerQuery(GET_CASINO_BY_UUID, {uuid: uuid,})
+    const { bonus_title, logoUrl, name, features, rating, review, promos } = casinoReviewData.getCasinoByUUID
     
     return (
-        <div>CasinoReview</div>
-    )
+		<>
+			<ReviewTopSection
+				mainBonus={bonus_title}
+				logo={logoUrl}
+				casinoName={name}
+				features={features}
+				rating={rating}
+			/>
+			<ReviewComponent reviewData={review} />
+		</>    
+	)
 }
 
 export default CasinoReview
