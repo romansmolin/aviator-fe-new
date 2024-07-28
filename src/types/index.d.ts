@@ -26,3 +26,15 @@ export type CasinoEntry = {
 	casino: string;
 	__typename: string;
 }
+
+type StrapiContentItem = {
+	type: string;
+	text: string;
+	bold: boolean;
+}
+
+export type StrapiContent = {
+	type: string;
+	children: StrapiContentItem[];
+}
+

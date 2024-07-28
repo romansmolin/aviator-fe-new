@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Menu, Search, CircleUser, HomeIcon, ShoppingCart, Package, Users, LineChart, Package2 } from 'lucide-react';
+import { Menu, Search, CircleUser, Star, ShoppingCart, Package, Users, LineChart, Package2 } from 'lucide-react';
 
 import { Button } from './ui/button';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem } from '@radix-ui/react-dropdown-menu';
@@ -12,7 +12,7 @@ export default function Header() {
         <header className="flex fixed w-full h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
             <Sheet>
                 <SheetTrigger asChild>
-                    <Button variant="outline" size="icon" className="shrink-0 md:hidden">
+                    <Button variant="outline" size="icon" className="shrink-0 lg:hidden">
                         <Menu className="h-5 w-5" />
                         <span className="sr-only">Toggle navigation menu</span>
                     </Button>
@@ -23,11 +23,11 @@ export default function Header() {
                             <Package2 className="h-6 w-6" />
                             <span>Aviator Play</span>
                         </Link>
-                        <NavigationLink href="#" icon={HomeIcon} label="Dashboard" />
-                        <NavigationLink href="#" icon={ShoppingCart} label="Orders" badge="6" active />
-                        <NavigationLink href="#" icon={Package} label="Products" />
-                        <NavigationLink href="#" icon={Users} label="Customers" />
-                        <NavigationLink href="#" icon={LineChart} label="Analytics" />
+                        <NavigationLink href="#" icon={<Star />} label="Dashboard" />
+                        <NavigationLink href="#" icon={<Star />} label="Orders" badge="6" active />
+                        <NavigationLink href="#" icon={<Star />} label="Products" />
+                        <NavigationLink href="#" icon={<Star />} label="Customers" />
+                        <NavigationLink href="#" icon={<Star />} label="Analytics" />
                     </nav>
                 </SheetContent>
             </Sheet>

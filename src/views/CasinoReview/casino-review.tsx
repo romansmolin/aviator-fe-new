@@ -3,6 +3,8 @@ import { getServerQuery } from '@/lib/apollo-client'
 import { GET_CASINO_BY_UUID } from '@/shared/schemas/casinos'
 import ReviewTopSection from './blocks/review-top-section'
 import ReviewComponent from './blocks/review-component'
+import { getTableContentData } from '@/hooks/getTableContentData'
+import TableContent from '@/components/table-content'
 
 interface CasinoReviewProps {
     uuid: string
@@ -11,7 +13,8 @@ interface CasinoReviewProps {
 const CasinoReview: React.FC<CasinoReviewProps> = async ({ uuid }) => {
     const casinoReviewData = await getServerQuery(GET_CASINO_BY_UUID, {uuid: uuid,})
     const { bonus_title, logoUrl, name, features, rating, review, promos } = casinoReviewData.getCasinoByUUID
-    
+    const tableContent = getTableContentData(review)
+
     return (
 		<>
 			<ReviewTopSection
@@ -21,7 +24,10 @@ const CasinoReview: React.FC<CasinoReviewProps> = async ({ uuid }) => {
 				features={features}
 				rating={rating}
 			/>
-			<ReviewComponent reviewData={review} />
+			<div className='flex flex-col lg:flex-row gap-5 mt-6 relative'>
+				<TableContent content={tableContent}/>
+				<ReviewComponent reviewData={review} />
+			</div>
 		</>    
 	)
 }

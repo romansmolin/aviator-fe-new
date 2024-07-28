@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Check } from "lucide-react";
 import RatingCircle from "@/components/rating-circle";
+import { Button } from "@/components/ui/button";
 
 interface ReviewTopSectionProps {
     mainBonus: string;
@@ -40,11 +41,11 @@ const ReviewTopSection: React.FC<ReviewTopSectionProps> = ({
     return (
         <div className="flex flex-col lg:flex-row gap-5 mt-6">
             {/* Card With Logo And Bonus */}
-            {/* <div
-                className="relative flex lg:max-w-96 flex-col rounded-xl  
-                 bg-clip-border text-gray-700 shadow-md py-6 gap-3"
+            <div
+                className=" flex lg:max-w-96 flex-col rounded-xl  
+                 bg-clip-border border border-dashed shadow-md py-6 gap-3"
             >
-                <div className="main-gradient shadow-blue-gray-500/40 relative mx-4 h-56 overflow-hidden rounded-xl bg-clip-border text-white shadow-lg flex justify-center items-center">
+                <div className="bg-primary shadow-blue-gray-500/40 mx-4 h-56 overflow-hidden rounded-xl bg-clip-border text-white shadow-lg flex justify-center items-center">
                     <Image src={logo} alt="card-image" width={200} height={200} />
                 </div>
 
@@ -61,14 +62,11 @@ const ReviewTopSection: React.FC<ReviewTopSectionProps> = ({
                 </h5>
 
                 <div className=" pt-0 m-auto mt-5">
-                    <button
-                        className="select-none rounded-lg bg-gray-900 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                        type="button"
-                    >
-                        PLAY NOW
-                    </button>
+                    <Button className="text-white">
+                        Play Now
+                    </Button>
                 </div>
-            </div> */}
+            </div>
 
             {/* Main Info */}
             <div className="flex flex-col w-[100%] bg-clip-border  py-6 px-5">
