@@ -13,7 +13,7 @@ export const { getClient } = registerApolloClient(() => {
     });
 });
 
-export const useServerQuery = async (schema: any, variables: any) => {
+export const getServerQuery = async (schema: any, variables: any) => {
     const query = schema
     const { data } = await getClient().query({
 		query,

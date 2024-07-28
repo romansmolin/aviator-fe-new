@@ -1,10 +1,16 @@
 import Link from 'next/link';
-import { Package2, Bell, HomeIcon, ShoppingCart, Package, Users, LineChart } from 'lucide-react';
+import { Package2, HomeIcon, Dices, NotebookText, Castle } from 'lucide-react';
 import NavigationLink from './navigation-link';
-import { Button } from './ui/button';
 import { ModeToggle } from './mode-toggle';
+import { headers } from "next/headers";
+import { sidebarMenu } from '@/config/menu'
+
+
 
 export default function Sidebar() {
+    const headerList = headers();
+    const pathname = headerList.get("x-current-path");
+    console.log(pathname)
     return (
         <div className="hidden fixed h-screen border-r bg-muted/40 md:block md:w-72">
             <div className="flex h-full max-h-screen flex-col gap-2">
@@ -20,11 +26,15 @@ export default function Sidebar() {
                 </div>
                 <div className="flex-1">
                     <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-                        <NavigationLink href="#" icon={HomeIcon} label="Dashboard" />
-                        <NavigationLink href="#" icon={ShoppingCart} label="Orders" badge="6" />
-                        <NavigationLink href="#" icon={Package} label="Products" active />
-                        <NavigationLink href="#" icon={Users} label="Customers" />
-                        <NavigationLink href="#" icon={LineChart} label="Analytics" />
+                        {sidebarMenu.map(item => (
+                            <NavigationLink 
+                                key={item.label} 
+                                href={item.href} 
+                                icon={item.icon} 
+                                label={item.label}
+                                active={item.href === pathname ? true : false} 
+                            />
+                        ))}
                     </nav>
                 </div>
             </div>

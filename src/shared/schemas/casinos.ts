@@ -19,3 +19,29 @@ export const CASINO_TOP_BY_COUNTRY = gql`
     }
   }
 `;
+
+export const GET_CASINO_BY_UUID = gql`
+query GetCasinoByID($uuid: String!) {
+  getCasinoByUUID(uuid: $uuid) {
+    name
+    bonus_title
+    logoUrl
+    features
+    rating
+    review {
+      type
+      children {
+        type
+        text
+        bold
+      }
+    }
+    promos {
+      bonus_title
+      bonus_subtitle
+      bonus_link
+      bonus_img
+    }
+  }
+}
+`;
