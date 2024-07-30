@@ -6,6 +6,7 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLab
 import { Input } from './ui/input';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import NavigationLink from './navigation-link';
+import { sidebarMenu } from '@/config/menu';
 
 export default function Header() {
     return (
@@ -23,11 +24,14 @@ export default function Header() {
                             <Package2 className="h-6 w-6" />
                             <span>Aviator Play</span>
                         </Link>
-                        <NavigationLink href="#" icon={<Star />} label="Dashboard" />
-                        <NavigationLink href="#" icon={<Star />} label="Orders" badge="6" active />
-                        <NavigationLink href="#" icon={<Star />} label="Products" />
-                        <NavigationLink href="#" icon={<Star />} label="Customers" />
-                        <NavigationLink href="#" icon={<Star />} label="Analytics" />
+                        {sidebarMenu.map(item => (
+                            <NavigationLink 
+                                key={item.label} 
+                                href={item.href} 
+                                icon={item.icon} 
+                                label={item.label}
+                            />
+                        ))}
                     </nav>
                 </SheetContent>
             </Sheet>

@@ -43,7 +43,7 @@ const ReviewTopSection: React.FC<ReviewTopSectionProps> = ({
             {/* Card With Logo And Bonus */}
             <div
                 className=" flex lg:max-w-96 flex-col rounded-xl  
-                 bg-clip-border border border-dashed shadow-md py-6 gap-3"
+                 bg-clip-border border border-dashed py-6 gap-3"
             >
                 <div className="bg-primary shadow-blue-gray-500/40 mx-4 h-56 overflow-hidden rounded-xl bg-clip-border text-white shadow-lg flex justify-center items-center">
                     <Image src={logo} alt="card-image" width={200} height={200} />
@@ -56,7 +56,7 @@ const ReviewTopSection: React.FC<ReviewTopSectionProps> = ({
                         </h5>
                     </div>
                 </div>
-                <h5 className="text-gradient block text-center font-sans text-3xl font-bold leading-snug antialiased">
+                <h5 className="block text-center font-sans text-3xl font-bold leading-snug antialiased">
                     {" "}
                     {mainBonus}
                 </h5>
@@ -76,9 +76,9 @@ const ReviewTopSection: React.FC<ReviewTopSectionProps> = ({
 
                 <div className="mt-5 flex flex-col sm:flex-row justify-between gap-5 lg:gap-12 ">
                     <div>
-                        <ul className="space-y-4 text-left text-gray-400">
+                        <ul className="space-y-4 text-left">
                             {features?.map((feature) => (
-                                <li key={feature} className="flex items-center space-x-3 rtl:space-x-reverse">
+                                <li key={feature} className="flex text-justify items-center space-x-3 rtl:space-x-reverse">
                                     <Check />
                                     <span>{readableFeatures[feature]}</span>
                                 </li>

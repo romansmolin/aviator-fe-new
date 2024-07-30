@@ -24,7 +24,7 @@ const CasinoReview: React.FC<CasinoReviewProps> = async ({ uuid }) => {
 				features={features}
 				rating={rating}
 			/>
-			<div className='flex flex-col lg:flex-row gap-5 mt-6 relative'>
+			<div className='flex flex-col lg:flex-row gap-5 mt-6'>
 				<TableContent content={tableContent}/>
 				<ReviewComponent reviewData={review} />
 			</div>

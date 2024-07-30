@@ -47,7 +47,7 @@ const CasinoTopCard: React.FC<CasinoCardProps> = ({
 			</div>
 
 			{/* Text */}
-			<div className="md:col-span-2 flex flex-col items-center justify-between p-4 leading-normal text-center md:text-left">
+			<div className="md:col-span-2 flex flex-col items-center justify-between lg:p-4 leading-normal text-center md:text-left">
 				<h5 className="mb-2 text-2xl font-bold tracking-tight text-gradient">{name}</h5>
 				<p className="mb-3 text-primary-400 text-center font-bold">{bonus}</p>
 			</div>
@@ -63,7 +63,7 @@ const CasinoTopCard: React.FC<CasinoCardProps> = ({
 
 			{/* Buttons */}
 			<div className="md:col-span-1 flex justify-center w-full md:w-auto">
-				<div className="flex flex-col gap-3 w-44">
+				<div className="flex flex-col gap-3 w-full lg:w-44">
 					<Button>Play Now!</Button>
 					<Button asChild>
 						<Link
