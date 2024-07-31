@@ -14,7 +14,7 @@ import {
 
 function makeClient() {
   const httpLink = new HttpLink({
-      uri: "put your api endpoint here",
+      uri: process.env.GRAPHQL_API_URL,
   });
 
   return new NextSSRApolloClient({
