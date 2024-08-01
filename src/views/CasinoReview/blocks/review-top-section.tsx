@@ -39,13 +39,13 @@ const ReviewTopSection: React.FC<ReviewTopSectionProps> = ({
     rating
 }) => {
     return (
-        <div className="flex flex-col lg:flex-row gap-5 mt-6">
+        <div className="flex flex-col gap-5">
             {/* Card With Logo And Bonus */}
             <div
-                className=" flex lg:max-w-96 flex-col rounded-xl  
-                 bg-clip-border border border-dashed py-6 gap-3"
+                className=" flex w-full flex-col rounded-xl  
+                 bg-clip-border border border-dashed gap-3 pb-6"
             >
-                <div className="bg-primary shadow-blue-gray-500/40 mx-4 h-56 overflow-hidden rounded-xl bg-clip-border text-white shadow-lg flex justify-center items-center">
+                <div className="bg-primary shadow-blue-gray-500/40 h-56 rounded-xl bg-clip-border text-white flex justify-center items-center w-full">
                     <Image src={logo} alt="card-image" width={200} height={200} />
                 </div>
 
@@ -62,14 +62,14 @@ const ReviewTopSection: React.FC<ReviewTopSectionProps> = ({
                 </h5>
 
                 <div className=" pt-0 m-auto mt-5">
-                    <Button className="text-white">
+                    <Button>
                         Play Now
                     </Button>
                 </div>
             </div>
 
             {/* Main Info */}
-            <div className="flex flex-col w-[100%] bg-clip-border  py-6 px-5">
+            <div className="flex flex-col border border-dashed rounded-xl w-[100%] bg-clip-border  py-6 px-5">
                 <h1 className="text-4xl text-gradient font-bold pb-4 border-b-2">
                     {casinoName}
                 </h1>

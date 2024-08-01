@@ -25,7 +25,7 @@ export default function RootLayout({
 				<Providers>
 					<div className="grid min-h-screen w-full">
 						<Sidebar />
-						<div className="flex lg:ml-72 flex-col">
+						<div className="flex lg:ml-64 flex-col">
 							<Header />
 							<MainContent>
 								{children}
