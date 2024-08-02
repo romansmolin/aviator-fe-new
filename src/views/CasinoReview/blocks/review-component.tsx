@@ -8,13 +8,12 @@ interface ReviewComponentProps {
 
 const ReviewComponent: React.FC<ReviewComponentProps> = ({ reviewData }) => {
     return (
-        <div className="flex flex-col gap-5 w-[100%] bg-clip-border px-5">
+        <div className="flex flex-col rounded-xl py-6 border border-dashed gap-5 w-[100%] bg-clip-border px-5">
             {reviewData.map((item: any, index: number) => {
                 if (item.type === "heading") {
-                    return <h3 key={index} className="text-4xl font-bold">{item.children[0].text}</h3>;
+                    return <h3 key={index} id={item.children[0].text} className="text-4xl scroll-my-14 font-bold">{item.children[0].text}</h3>;
                 } else if (item.type === "paragraph") {
-                    // eslint-disable-next-line react/jsx-key
-                    return <Paragraph reviewText={item.children}/>;
+                    return <Paragraph key={item.children.text} id={item.children.text} reviewText={item.children}/>;
                 } else {
                     return null;
                 }

@@ -38,3 +38,8 @@ export type StrapiContent = {
 	children: StrapiContentItem[];
 }
 
+export type TableContentItem = {
+    heading: string;
+    linkId: string
+}
+

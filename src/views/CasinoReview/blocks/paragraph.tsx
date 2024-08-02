@@ -2,6 +2,7 @@ import React from "react";
 
 interface ParagraphProps {
   reviewText: TextItem[];
+  id: string
 }
 
 type TextItem = {
@@ -9,11 +10,11 @@ type TextItem = {
     text: string
 }
 
-const Paragraph: React.FC<ParagraphProps> = ({ reviewText }) => {
+const Paragraph: React.FC<ParagraphProps> = ({ id, reviewText }) => {
   return (
-    <div>
+    <div id={id}>
       {reviewText.map((item, index) => (
-        <span key={index} style={item.bold ? { fontWeight: 'bold' } : undefined}>
+        <span key={item.text} style={item.bold ? { fontWeight: 'bold' } : undefined}>
           {item.text}
         </span>
       ))}

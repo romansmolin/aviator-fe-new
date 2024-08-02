@@ -19,7 +19,7 @@ const NavigationLink: React.FC<NavigationLinkProps> = ({ href, icon: Icon, label
     return (
         <Link
             href={href}
-            className={`flex items-center gap-3 rounded-lg px-3 py-2 ${pathname === href ? 'bg-muted/40 text-primary' : 'text-muted-foreground'} transition-all hover:text-primary`}
+            className={`flex items-center gap-3 rounded-lg px-3 py-2 ${pathname === href ? 'bg-muted/40 text-primary' : 'text-white'} transition-all hover:text-primary`}
         >
             {Icon}   
             {label}
