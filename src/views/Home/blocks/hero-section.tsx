@@ -5,7 +5,7 @@ import Target from '@/shared/icons/Target'
 const HeroSection = () => {
     return (
         <section className='flex justify-center relative bg-transparent sm:w-full lg:max-w-7xl xl:py-10 xl:max-w-screen-xl m-auto'>
-            <h1 className='z-10 text-2xl text-center leading-10 w-[65%] sm:max-w-[600px] lg:text-4xl lg:leading-14 text-black dark:text-white'>
+            <h1 className='text-2xl text-center leading-10 w-[65%] sm:max-w-[600px] lg:text-4xl lg:leading-14 text-black dark:text-white'>
                 Discover brand-new online casinos, with
                 <span className='text-primary font-bold m-0'> AviatorPlay</span>
             </h1>
