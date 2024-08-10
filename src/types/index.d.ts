@@ -43,3 +43,7 @@ export type TableContentItem = {
     linkId: string
 }
 
+export interface SvgProps {
+	className?: string
+}
+

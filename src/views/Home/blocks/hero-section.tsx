@@ -1,23 +1,17 @@
 import React from 'react'
-import Image from 'next/image'
+import Rocket from '@/shared/icons/Rocket'
+import Target from '@/shared/icons/Target'
 
 const HeroSection = () => {
     return (
-        <section className='grid grid-cols-8'>
-            <h1 className='col-span-8 text-center lg:text-start lg:col-span-5 text-2xl leading-10 max-w-[800px] lg:text-4xl lg:leading-14 text-black dark:text-white '>
+        <section className='flex justify-center relative bg-transparent w-full max-w-7xl m-auto'>
+            <h1 className='z-10 text-2xl text-center leading-10 max-w-[600px] lg:text-4xl lg:leading-14 text-black dark:text-white'>
                 Discover brand-new online casinos, and get lavish
-                bonuses daily, with 
+                bonuses daily, with
                 <span className='text-primary font-bold m-0'> AviatorPlay</span>
             </h1>
-            <div className='col-span-3 hidden lg:block rounded-2xl bg-primary'>
-                <Image 
-                    alt='Hero Section Image'
-                    src={'/hero-section.webp'}
-                    className='w-full h-full rounded-2xl'
-                    width={300}
-                    height={300}
-                />
-            </div>
+            <Rocket className='w-36 absolute left-8 bottom-0 -rotate-45 z-0' />
+            <Target className='z-0 absolute w-36 bottom-0 right-8' />
         </section>
     )
 }
