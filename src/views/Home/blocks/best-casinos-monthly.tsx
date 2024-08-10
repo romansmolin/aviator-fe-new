@@ -9,7 +9,7 @@ const BestCasinosMonthly: React.FC<BestCasinosMonthlyProps> = ({ casinos }) => {
 	return (
 		<div className='mt-10'>
 			<h2 className='text-xl lg:text-2xl'>Our Top 10 Casinos of July</h2>
-			<div className='flex flex-col gap-5 mt-5'>
+			<div className='flex w-full overflow-x-scroll lg:overflow-auto md:flex-col gap-5 mt-5'>
 				{casinos.map(casino => (
 					<CasinoTopCard
 						key={casino.title}

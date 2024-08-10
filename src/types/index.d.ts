@@ -38,3 +38,12 @@ export type StrapiContent = {
 	children: StrapiContentItem[];
 }
 
+export type TableContentItem = {
+    heading: string;
+    linkId: string
+}
+
+export interface SvgProps {
+	className?: string
+}
+

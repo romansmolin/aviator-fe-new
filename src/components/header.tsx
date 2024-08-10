@@ -7,10 +7,11 @@ import { Input } from './ui/input';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import NavigationLink from './navigation-link';
 import { sidebarMenu } from '@/config/menu';
+import { ModeToggle } from './mode-toggle';
 
 export default function Header() {
     return (
-        <header className="flex fixed w-full h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+        <header className="flex fixed w-full z-50 h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
             <Sheet>
                 <SheetTrigger asChild>
                     <Button variant="outline" size="icon" className="shrink-0 lg:hidden">
@@ -20,10 +21,6 @@ export default function Header() {
                 </SheetTrigger>
                 <SheetContent side="left" className="flex flex-col">
                     <nav className="grid gap-2 text-lg font-medium">
-                        <Link href="/" className="flex items-center gap-2 text-lg font-semibold">
-                            <Package2 className="h-6 w-6" />
-                            <span>Aviator Play</span>
-                        </Link>
                         {sidebarMenu.map(item => (
                             <NavigationLink 
                                 key={item.label} 
@@ -33,6 +30,9 @@ export default function Header() {
                             />
                         ))}
                     </nav>
+                    <div className='absolute left-2 bottom-2'>
+                        <ModeToggle />
+                    </div>
                 </SheetContent>
             </Sheet>
             <div className="w-full flex-1">

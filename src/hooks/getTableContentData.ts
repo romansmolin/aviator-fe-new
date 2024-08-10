@@ -1,11 +1,20 @@
+import TableContent from "@/components/table-content";
 import { StrapiContent } from "@/types";
 
+type TableContentItem = {
+    heading: string;
+    linkId: string
+}
+
 export const getTableContentData = (contentData: [StrapiContent]) => {
-    const tableContent: string[] = []
+    const tableContent: TableContentItem[] = []
 
     contentData.forEach(item => {
         if (item.type === 'heading') {
-            tableContent.push(item.children[0].text)
+            tableContent.push({
+                heading: item.children[0].text, 
+                linkId: item.children[0].text
+            })
         }
     })
 
