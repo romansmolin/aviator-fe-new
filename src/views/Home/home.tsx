@@ -12,9 +12,11 @@ export default async function Home() {
     const { getTopByCountryName } = await getServerQuery(CASINO_TOP_BY_COUNTRY, variables)
 
     return (
-        <Suspense fallback={<Loading />}>
+        <>
             <HeroSection />
-            <BestCasinosMonthly casinos={getTopByCountryName.top_list} />
-        </Suspense>
+            <Suspense fallback={<Loading />}>
+                <BestCasinosMonthly casinos={getTopByCountryName.top_list} />
+            </Suspense>
+        </>
     )
 }
