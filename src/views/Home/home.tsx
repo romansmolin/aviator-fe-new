@@ -1,15 +1,20 @@
+import { getServerQuery } from "@/lib/apollo-client";
 import BestCasinosMonthly from "./blocks/best-casinos-monthly";
 import HeroSection from "./blocks/hero-section";
+import { CASINO_TOP_BY_COUNTRY } from "@/shared/schemas/casinos";
 
-interface HomePageProps {
-    topCasinos: any
-}
+const Home = async () => {
 
-const Home: React.FC<HomePageProps> = ({ topCasinos }) => {
+    const variables = {
+		country: "Germany",
+	}
+
+	const { getTopByCountryName } = await getServerQuery(CASINO_TOP_BY_COUNTRY, variables)
+
     return (
         <>
             <HeroSection />
-            <BestCasinosMonthly casinos={topCasinos.top_list} />
+            <BestCasinosMonthly casinos={getTopByCountryName.top_list} />
         </>
     );
 };
