@@ -7,7 +7,7 @@ interface BestCasinosMonthlyProps {
 
 const BestCasinosMonthly: React.FC<BestCasinosMonthlyProps> = ({ casinos }) => {
 	return (
-		<div className='mt-10'>
+		<div className='mt-10 w-[calc(100%+21px)] md:w-[unset]'>
 			<h2 className='text-xl lg:text-2xl'>Our Top 10 Casinos of July</h2>
 			<div className='flex w-full overflow-x-scroll lg:overflow-auto md:flex-col gap-5 mt-5'>
 				{casinos.map(casino => (
