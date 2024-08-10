@@ -2,8 +2,6 @@ import { onError } from '@apollo/client/link/error';
 import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 import { registerApolloClient } from "@apollo/experimental-nextjs-app-support/rsc";
 
-const STRAPI_URL = process.env.GRAPHQL_API_URL || 'http://localhost:1337';
-
 export const { getClient } = registerApolloClient(() => {
     return new ApolloClient({
         cache: new InMemoryCache(),
