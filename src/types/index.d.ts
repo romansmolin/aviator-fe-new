@@ -27,6 +27,18 @@ export type CasinoEntry = {
 	__typename: string;
 }
 
+export type BonusEntry = {
+	casino_name: string,
+    casino_uuid: string,
+    bonus_subtitle: string,
+    bonus_title: string,
+	casino_logo: string,
+	info: {
+		elease_date?: string | null,
+		available_for: string[], 
+	}
+}
+
 type StrapiContentItem = {
 	type: string;
 	text: string;

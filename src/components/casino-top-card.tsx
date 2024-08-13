@@ -38,7 +38,7 @@ const CasinoTopCard: React.FC<CasinoCardProps> = ({
 	};
 
 	return (
-		<div className="min-w-[305px] lg:w-[unset] grid grid-cols-1 md:grid-cols-5 justify-between gap-4 p-5 items-center rounded-xl box-border border">
+		<div className="min-w-[305px] shadow-lg lg:w-[unset] grid grid-cols-1 md:grid-cols-5 justify-between gap-4 p-5 items-center rounded-xl box-border border">
 			{/* Logo */}
 			<div className="md:col-span-1 h-[170px] bg-primary p-4 rounded-xl flex items-center justify-center">
 				<div className="w-full md:w-[150px] h-full flex justify-center items-center">
