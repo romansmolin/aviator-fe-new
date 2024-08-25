@@ -11,10 +11,10 @@ const NoDepositBonusesGrid: React.FC<NoDepositBonusGridProps> = ({ bonuses }) =>
 		<Grid>
 			{bonuses.map(bonus => (
 				<BonusCard
-					key={''} 
-					casinoName={''} 
-					casinoLogo={''} 
-					bonusTitle={''}				
+					key={bonus.bonus_title} 
+					casinoName={bonus.casino_name} 
+					casinoLogo={bonus.casino_logo} 
+					bonusTitle={bonus.bonus_title}				
 				/>
 			))}
 		</Grid>

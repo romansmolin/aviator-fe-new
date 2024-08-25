@@ -8,7 +8,7 @@ interface GridProps {
 
 const Grid: React.FC<GridProps> = ({ className = "", children }) => {
     return (
-        <div className={cn('grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3', className)}>
+        <div className={cn('grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3 py-5', className)}>
             {children}
         </div>
     )
