@@ -1,5 +1,6 @@
 import BonusCard from "./bonus-card";
 import CasinoTopCard from "./casino-top-card";
+import Faq from "./faq";
 import Grid from "./grid";
 import Header from "./header";
 import HeadingTitle from "./heading-title";
@@ -26,5 +27,6 @@ export {
     TableContent,
     TopList,
     HeadingTitle,
-    PaginationControl
+    PaginationControl,
+    Faq
 }
