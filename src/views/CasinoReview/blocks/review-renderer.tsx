@@ -6,7 +6,7 @@ interface ReviewComponentProps {
     reviewData: StrapiContent[]
 }
 
-const ReviewComponent: React.FC<ReviewComponentProps> = ({ reviewData }) => {
+const ReviewRenderer: React.FC<ReviewComponentProps> = ({ reviewData }) => {
     return (
         <div className="flex flex-col rounded-xl py-6 border border-dashed gap-5 w-[100%] bg-clip-border px-5">
             {reviewData.map((item: any, index: number) => {
@@ -22,4 +22,4 @@ const ReviewComponent: React.FC<ReviewComponentProps> = ({ reviewData }) => {
     );
 };
 
-export default ReviewComponent;
+export default ReviewRenderer;

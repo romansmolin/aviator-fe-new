@@ -2,9 +2,9 @@ import React from 'react'
 import { getServerQuery } from '@/lib/apollo-client'
 import { GET_CASINO_BY_UUID } from '@/shared/schemas/casinos'
 import ReviewTopSection from './blocks/review-top-section'
-import ReviewComponent from './blocks/review-component'
 import { getTableContentData } from '@/hooks/getTableContentData'
 import TableContent from '@/components/table-content'
+import ReviewRenderer from './blocks/review-renderer'
 
 interface CasinoReviewProps {
     uuid: string
@@ -26,7 +26,7 @@ const CasinoReview: React.FC<CasinoReviewProps> = async ({ uuid }) => {
 			/>
 			<div className='flex flex-col lg:flex-row gap-5 mt-6'>
 				<TableContent content={tableContent}/>
-				<ReviewComponent reviewData={review} />
+				<ReviewRenderer reviewData={review} />
 			</div>
 		</>    
 	)

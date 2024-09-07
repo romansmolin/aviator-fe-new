@@ -33,6 +33,7 @@ export type BonusEntry = {
     bonus_subtitle: string,
     bonus_title: string,
 	casino_logo: string,
+	uuid: string,
 	info: {
 		elease_date?: string | null,
 		available_for: string[], 

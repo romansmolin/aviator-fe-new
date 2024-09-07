@@ -1,8 +1,6 @@
 import React from "react";
-import Link from "next/link";
 import { Dices } from "lucide-react";
 import type { TableContentItem } from "@/types";
-import { cn } from "@/lib/utils";
 import NavigationLink from "./navigation-link";
 
 interface TableContentProps {
@@ -17,13 +15,6 @@ const TableContent: React.FC<TableContentProps> = ({ content }) => {
 			<ul>
 				{content.map((item) => (
 					<li key={item.heading}>
-						{/* <Link
-							href={`#${item.linkId}`}
-							className={cn('flex items-center gap-4 rounded-lg py-2 transition-all hover:text-primary', )}
-						>
-							<Dices className="w-5 h-5 flex-shrink-0" />
-							<span className="flex-grow">{item.heading}</span>
-						</Link> */}
 						<NavigationLink 
 							href={`#${item.linkId}`}
 							label={item.heading}

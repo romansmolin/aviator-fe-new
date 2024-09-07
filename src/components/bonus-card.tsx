@@ -1,26 +1,18 @@
 import { Card } from "@/components/ui/card"
 import Image from "next/image"
 import { Button } from "./ui/button"
+import Link from "next/link"
 
 interface BonusCardProps {
     casinoName: string,
     casinoLogo: string,
-    bonusTitle: string
+    bonusTitle: string,
+    uuid: String,
 }
 
-const BonusCard: React.FC<BonusCardProps> = ({ casinoName, casinoLogo, bonusTitle }) => {
+const BonusCard: React.FC<BonusCardProps> = ({ casinoName, casinoLogo, bonusTitle, uuid }) => {
     return (
         <Card className="min-w-[305px] rounded-lg shadow-lg overflow-hidden bg-transparent">
-            {/* <div className="relative h-auto w-full">
-                <Image
-                    src={casinoLogo}
-                    alt="Bonus Image"
-                    width={768}
-                    height={384}
-                    className="w-full object-cover"
-                    style={{ objectFit: "cover" }}
-                />
-            </div> */}
             <div className="h-[170px] bg-primary p-4 rounded-xl flex items-center justify-center">
                 <div className="w-full md:w-[150px] flex justify-center items-center">
                     <Image src={casinoLogo} alt="Bonus Image" width={150} height={150} />
@@ -44,7 +36,18 @@ const BonusCard: React.FC<BonusCardProps> = ({ casinoName, casinoLogo, bonusTitl
                         <p>x40</p>
                     </div>
                 </div>
-                <Button className="w-full mt-5">Get Now!</Button>
+                <Button className="w-full mt-5" asChild>
+                    <Link
+                        href={{
+                            pathname: `/bonus`,
+                            query: {
+                                id: uuid?.toString(),
+                            },
+                        }}
+                    >
+                        Review
+                    </Link>
+                </Button>
             </div>
         </Card>
     )

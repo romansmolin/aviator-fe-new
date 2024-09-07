@@ -17,6 +17,7 @@ const BestBonusesMonthly: React.FC<BestBonusesMonthlyProps> = ({ bonuses }) => {
                         casinoName={bonus.casino_name}
                         bonusTitle={bonus.bonus_title}
                         casinoLogo={bonus.casino_logo}
+                        uuid={bonus.uuid}
                     />
                 ))}
             </div>

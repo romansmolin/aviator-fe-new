@@ -8,6 +8,7 @@ export const GET_BONUSES_BY_TYPE = gql`
             casino_uuid
             bonus_subtitle
             bonus_title
+            uuid
             casino_logo
             info {
                 release_date
@@ -30,6 +31,7 @@ export const GET_ALL_BONUSES = gql`
             bonus_subtitle
             bonus_title
             casino_logo
+            uuid
             info {
                 release_date
                 available_for
@@ -38,6 +40,38 @@ export const GET_ALL_BONUSES = gql`
             }
             }
             totalPages
+        }
+    }
+`
+
+export const GET_BONUS_BY_UUID = gql`
+    query GetBonusById($uuid: String!) {
+        getBonusById(uuid: $uuid) {
+            bonus {
+            casino_name
+            casino_uuid
+            bonus_subtitle
+            bonus_title
+            casino_logo
+            bonusReview {
+                type
+                children {
+                type
+                text
+                bold
+                }
+            }
+            faqInfo {
+                label
+                text
+            }
+            info {
+                release_date
+                available_for
+                bonus_type
+                bonus_status
+            }
+            }
         }
     }
 `
