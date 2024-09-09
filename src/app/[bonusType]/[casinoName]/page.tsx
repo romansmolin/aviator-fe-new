@@ -1,5 +1,5 @@
 import React from 'react'
-import BonusPage from '@/views/Bonus/BonusPage'
+import BonusPage from '@/views/Bonus/bonus-page'
 
 interface BonusProps {
     searchParams: {
