@@ -16,8 +16,6 @@ const NoDepositBonuses: React.FC<NoDepositBonusesProps> = async ({ page }) => {
         "type": "noDepositBonus"
     })
 
-    console.log('Bonuses: ', getBonusesByType.bonuses)
-
     return (
         <>
             <HeadingTitle>Best No Deposit Bonuses</HeadingTitle>

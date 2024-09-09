@@ -2,15 +2,17 @@ import { Card } from "@/components/ui/card"
 import Image from "next/image"
 import { Button } from "./ui/button"
 import Link from "next/link"
+import { getUrlFriendlyString } from "@/shared/utils/getUrlFriendlyString"
 
 interface BonusCardProps {
     casinoName: string,
     casinoLogo: string,
     bonusTitle: string,
     uuid: String,
+    bonusType: String,
 }
 
-const BonusCard: React.FC<BonusCardProps> = ({ casinoName, casinoLogo, bonusTitle, uuid }) => {
+const BonusCard: React.FC<BonusCardProps> = ({ casinoName, casinoLogo, bonusTitle, uuid, bonusType }) => {
     return (
         <Card className="min-w-[305px] rounded-lg shadow-lg overflow-hidden bg-transparent">
             <div className="h-[170px] bg-primary p-4 rounded-xl flex items-center justify-center">
@@ -39,7 +41,7 @@ const BonusCard: React.FC<BonusCardProps> = ({ casinoName, casinoLogo, bonusTitl
                 <Button className="w-full mt-5" asChild>
                     <Link
                         href={{
-                            pathname: `/bonus`,
+                            pathname: `/${getUrlFriendlyString(bonusType as string)}/${getUrlFriendlyString(casinoName)}`,
                             query: {
                                 id: uuid?.toString(),
                             },

@@ -37,6 +37,7 @@ export type BonusEntry = {
 	info: {
 		elease_date?: string | null,
 		available_for: string[], 
+		bonus_type: string[]
 	}
 }
 

@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import React from "react";
 
 interface ParagraphProps {
@@ -12,9 +13,9 @@ type TextItem = {
 
 const Paragraph: React.FC<ParagraphProps> = ({ id, reviewText }) => {
   return (
-    <div id={id}>
+    <div id={id} className="text-justify">
       {reviewText.map((item, index) => (
-        <span key={item.text} style={item.bold ? { fontWeight: 'bold' } : undefined}>
+        <span key={item.text} className={cn(item.bold ? 'font-bold text-primary' : '')}>
           {item.text}
         </span>
       ))}

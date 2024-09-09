@@ -2,20 +2,33 @@ import React from 'react'
 import Image from 'next/image'
 import { CheckIcon } from 'lucide-react'
 import { Faq } from '@/components'
+import { getServerQuery } from '@/lib/apollo-client'
+import { GET_BONUS_BY_UUID } from '@/shared/schemas/bonuses'
+import BonusRenderer from './blocks/bonus-renderer'
 
-const BonusPage = () => {
+interface BonusPageProps {
+    uuid: string
+}
+
+const redableBonusType: {[key: string]: string} = {
+    noDepositBonus: 'No Deposit Bonus'
+}
+
+const BonusPage: React.FC<BonusPageProps> = async ({ uuid }) => {
+    const { getBonusById } = await getServerQuery(GET_BONUS_BY_UUID, { uuid })
+    const { faqInfo, casino_logo, bonusReview, casino_name, info } = getBonusById.bonus
+
+    console.log(getBonusById.bonus)
+
     return (
-        <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-16">
+        <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-6">
             <div className="grid grid-cols-1 gap-8 md:gap-12">
-                <div className='grid grid-cols-1 md:grid-cols-2 '>
-                    <Image
-                        src="/placeholder.svg"
-                        width={1200}
-                        height={800}
-                        alt="Product Image"
-                        className="w-full rounded-lg object-cover col-span-1"
-                        style={{ aspectRatio: "1200/800", objectFit: "cover" }}
-                    />
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+                    <div className="h-[200px] bg-primary rounded-xl flex items-center justify-center">
+                        <div className="w-full md:w-[150px] flex justify-center items-center">
+                            <Image src={casino_logo} alt="Bonus Image" width={150} height={150} />
+                        </div>
+                    </div>
                     <div className="mt-4 grid gap-2 col-span-1 h-fit">
                         <div className="flex items-center gap-2">
                             <CheckIcon className="w-4 h-4 text-primary" />
@@ -32,30 +45,10 @@ const BonusPage = () => {
                     </div>
                 </div>
                 <div className="col-span-1 md:col-span-2">
-                    <Faq />
+                    <Faq questions={faqInfo} heading={`${casino_name} ${redableBonusType[info.bonus_type[0]]}`}/>
                 </div>
                 <div className="col-span-1 md:col-span-2">
-                    <h2 className="text-2xl font-bold mb-4">Product Overview</h2>
-                    <div className="space-y-4 text-black dark:text-white">
-                        <p>
-                            Introducing our premium product, designed to revolutionize the way you approach [product/service]. Crafted
-                            with the utmost attention to detail, this [product/service] combines cutting-edge technology with
-                            unparalleled functionality, delivering a seamless and efficient experience.
-                        </p>
-                        <p>
-                            At the heart of our offering is a commitment to innovation and user-centric design.  meticulously
-                            engineered every aspect of this [product/service] to ensure it exceeds your expectations, from its sleek
-                            and modern aesthetic to its intuitive and responsive interface. With a focus on quality and durability,
-                            you can trust that this [product/service] will stand the test of time, providing you with a reliable and
-                            long-lasting solution.
-                        </p>
-                        <p>
-                            Whether  a seasoned professional or a tech-savvy individual, our [product/service] is designed to
-                            simplify your life and empower you to achieve your goals with ease. Experience the difference that our
-                            commitment to excellence can make, and discover the transformative power of our premium [product/service]
-                            today.
-                        </p>
-                    </div>
+                    <BonusRenderer bonusData={bonusReview} />
                 </div>
             </div>
         </div>

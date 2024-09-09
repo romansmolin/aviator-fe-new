@@ -14,7 +14,9 @@ const NoDepositBonusesGrid: React.FC<NoDepositBonusGridProps> = ({ bonuses }) =>
 					key={bonus.bonus_title} 
 					casinoName={bonus.casino_name} 
 					casinoLogo={bonus.casino_logo} 
-					bonusTitle={bonus.bonus_title}				
+					bonusTitle={bonus.bonus_title}	
+					uuid={bonus.uuid}
+					bonusType={bonus.info.bonus_type[0]}			
 				/>
 			))}
 		</Grid>
