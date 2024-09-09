@@ -18,8 +18,6 @@ const BonusPage: React.FC<BonusPageProps> = async ({ uuid }) => {
     const { getBonusById } = await getServerQuery(GET_BONUS_BY_UUID, { uuid })
     const { faqInfo, casino_logo, bonusReview, casino_name, info } = getBonusById.bonus
 
-    console.log(getBonusById.bonus)
-
     return (
         <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-6">
             <div className="grid grid-cols-1 gap-8 md:gap-12">
