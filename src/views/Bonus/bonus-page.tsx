@@ -19,7 +19,7 @@ const BonusPage: React.FC<BonusPageProps> = async ({ uuid }) => {
     const { faqInfo, casino_logo, bonusReview, casino_name, info } = getBonusById.bonus
 
     return (
-        <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-6">
+        <div className="w-full max-w-6xl mx-auto md:px-6 py-6">
             <div className="grid grid-cols-1 gap-8 md:gap-12">
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                     <div className="h-[200px] bg-primary rounded-xl flex items-center justify-center">
@@ -45,7 +45,7 @@ const BonusPage: React.FC<BonusPageProps> = async ({ uuid }) => {
                 <div className="col-span-1 md:col-span-2">
                     <Faq questions={faqInfo} heading={`${casino_name} ${redableBonusType[info.bonus_type[0]]}`}/>
                 </div>
-                <div className="col-span-1 md:col-span-2">
+                <div className="col-span-1 md:col-span-2 ">
                     <BonusRenderer bonusData={bonusReview} />
                 </div>
             </div>
