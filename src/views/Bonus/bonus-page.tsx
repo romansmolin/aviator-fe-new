@@ -1,10 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 import { CheckIcon } from 'lucide-react'
-import { Faq } from '@/components'
+import { Faq, TextContentRenderer as BonusRenderer } from '@/components'
 import { getServerQuery } from '@/lib/apollo-client'
 import { GET_BONUS_BY_UUID } from '@/shared/schemas/bonuses'
-import BonusRenderer from './blocks/bonus-renderer'
 
 interface BonusPageProps {
     uuid: string
@@ -46,7 +45,7 @@ const BonusPage: React.FC<BonusPageProps> = async ({ uuid }) => {
                     <Faq questions={faqInfo} heading={`${casino_name} ${redableBonusType[info.bonus_type[0]]}`}/>
                 </div>
                 <div className="col-span-1 md:col-span-2 ">
-                    <BonusRenderer bonusData={bonusReview} />
+                    <BonusRenderer contentData={bonusReview} />
                 </div>
             </div>
         </div>
