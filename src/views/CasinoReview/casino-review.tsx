@@ -4,8 +4,7 @@ import { GET_CASINO_BY_UUID } from '@/shared/schemas/casinos'
 import ReviewTopSection from './blocks/review-top-section'
 import { getTableContentData } from '@/hooks/getTableContentData'
 import TableContent from '@/components/table-content'
-import { TextContentRenderer as  ReviewRenderer} from '@/components'
-
+import { TextContentRenderer as ReviewRenderer} from '@/components/renderers'
 interface CasinoReviewProps {
     uuid: string
 }

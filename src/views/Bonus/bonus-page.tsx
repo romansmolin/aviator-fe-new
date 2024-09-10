@@ -1,7 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import { CheckIcon } from 'lucide-react'
-import { Faq, TextContentRenderer as BonusRenderer } from '@/components'
+import { TextContentRenderer as BonusRenderer } from '@/components/renderers'
+import { Faq } from '@/components'
 import { getServerQuery } from '@/lib/apollo-client'
 import { GET_BONUS_BY_UUID } from '@/shared/schemas/bonuses'
 

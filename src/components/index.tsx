@@ -11,7 +11,6 @@ import PaginationControl from "./pagination-control";
 import RatingCircle from "./rating-circle";
 import Sidebar from "./sidebar";
 import TableContent from "./table-content";
-import TextContentRenderer from "./text-content-renderer";
 import TopList from "./top-list";
 
 
@@ -30,5 +29,4 @@ export {
     HeadingTitle,
     PaginationControl,
     Faq,
-    TextContentRenderer
 }
