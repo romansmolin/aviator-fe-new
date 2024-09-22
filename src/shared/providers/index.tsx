@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react'
 import { ThemeProvider } from './theme-provider'
 import { ApolloProvider } from './apollo-provider'
-
 interface ProvidersProps {
     children: ReactNode
 }

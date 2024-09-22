@@ -4,7 +4,7 @@ import "./globals.css";
 import Sidebar from "@/components/sidebar";
 import MainContent from "@/components/main-content";
 import Header from "@/components/header";
-import Providers from "@/components/providers";
+import Providers from "@/shared/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 const trispace = Trispace({ subsets: ["latin"] })

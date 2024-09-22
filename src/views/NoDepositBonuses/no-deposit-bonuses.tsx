@@ -1,5 +1,5 @@
 import React from 'react'
-import { getServerQuery } from '@/lib/apollo-client'
+import { getServerQuery } from '@/shared/lib/apollo-client'
 import { GET_BONUSES_BY_TYPE } from '@/shared/schemas/bonuses'
 import NoDepositBonusesGrid from './blocks/no-deposit-bonus-grid'
 import { HeadingTitle, PaginationControl } from '@/components'

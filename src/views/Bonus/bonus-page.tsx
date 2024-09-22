@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { CheckIcon } from 'lucide-react'
 import { TextContentRenderer as BonusRenderer } from '@/components/renderers'
 import { Faq } from '@/components'
-import { getServerQuery } from '@/lib/apollo-client'
+import { getServerQuery } from '@/shared/lib/apollo-client'
 import { GET_BONUS_BY_UUID } from '@/shared/schemas/bonuses'
 
 interface BonusPageProps {

@@ -1,6 +1,6 @@
 import Loading from "@/components/loading";
 import React, { Suspense } from "react";
-import NoDepositBonuses from "@/views/NoDepositBonuses/NoDepositBonuses";
+import NoDepositBonuses from "@/views/NoDepositBonuses/no-deposit-bonuses";
 
 interface NoDepositBonusPageProps {
     searchParams: {

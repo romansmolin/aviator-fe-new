@@ -1,5 +1,5 @@
 import React from 'react'
-import { getServerQuery } from '@/lib/apollo-client'
+import { getServerQuery } from '@/shared/lib/apollo-client'
 import { GET_CASINO_BY_UUID } from '@/shared/schemas/casinos'
 import ReviewTopSection from './blocks/review-top-section'
 import { getTableContentData } from '@/hooks/getTableContentData'
