@@ -19,7 +19,7 @@ const content: Record<string, any> = {
 
 const ContentRenderer: React.FC<ContentRendererProps> = ({ pageContent }) => {
     return (
-        <div className="flex flex-col rounded-xl py-6 gap-5 w-[100%] bg-clip-border px-5">
+        <div className="flex flex-col rounded-xl py-6 gap-5 w-[100%] bg-clip-border">
             {pageContent.map((contentItem, idx) => {
                 const renderContent = content[contentItem.type];
                 return renderContent ? renderContent(contentItem, idx) : null;

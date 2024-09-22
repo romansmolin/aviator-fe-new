@@ -1,22 +1,22 @@
 import React from 'react'
 import { getServerQuery } from '@/shared/lib/apollo-client'
 import { GET_BONUSES_BY_TYPE } from '@/shared/schemas/bonuses'
-import NoDepositBonusesGrid from './blocks/no-deposit-bonus-grid'
+import BonusesGrid from './blocks/bonus-grid'
 import { HeadingTitle, PaginationControl } from '@/components'
 import { GET_PAGE_CONTENT_BY_SLUG } from '@/shared/schemas/page'
 import ContentRenderer from '@/components/renderers/content-renderer'
 
-interface NoDepositBonusesProps {
+interface BonusesProps {
     page: number
     slug: string
 }
 
-const NoDepositBonuses: React.FC<NoDepositBonusesProps> = async ({ page, slug }) => {
+const Bonuses: React.FC<BonusesProps> = async ({ page, slug }) => {
 
     const { getBonusesByType } = await getServerQuery(GET_BONUSES_BY_TYPE, {
         "page": page,
         "number": 6,
-        "type": "noDepositBonus"
+        "type": "no-deposit-bonuses"
     })
 
     const { getPageContentBySlug } = await getServerQuery(GET_PAGE_CONTENT_BY_SLUG, {
@@ -26,11 +26,11 @@ const NoDepositBonuses: React.FC<NoDepositBonusesProps> = async ({ page, slug })
     return (
         <>
             <HeadingTitle>Best No Deposit Bonuses</HeadingTitle>
-            <NoDepositBonusesGrid bonuses={getBonusesByType.bonuses} />
+            <BonusesGrid bonuses={getBonusesByType.bonuses} />
             <PaginationControl totalPages={getBonusesByType.totalPages} currentPage={page} />
             <ContentRenderer pageContent={getPageContentBySlug.pageContent}/>
         </>
     )
 }
 
-export default NoDepositBonuses
+export default Bonuses

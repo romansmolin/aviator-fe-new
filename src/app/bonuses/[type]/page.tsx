@@ -1,7 +1,6 @@
 import Loading from "@/components/loading";
 import React, { Suspense } from "react";
-import NoDepositBonuses from "@/views/NoDepositBonuses/no-deposit-bonuses";
-
+import Bonuses from "@/views/Bonuses/bonuses";
 interface NoDepositBonusPageProps {
     searchParams: {
         page: string;
@@ -15,15 +14,9 @@ const BonusCategoryPage: React.FC<NoDepositBonusPageProps> = ({ searchParams, pa
 
     const page = parseInt(searchParams.page) || 1
 
-    const bonusComponents: Record<string, React.ReactNode> = {
-        "no-deposit-bonuses": <NoDepositBonuses page={page} slug={params.type}/>,
-    };
-
-    const content = bonusComponents[params.type]
-
     return (
         <Suspense fallback={<Loading />}>
-            {content}
+            <Bonuses page={page} slug={params.type}/>
         </Suspense>
     );
 };

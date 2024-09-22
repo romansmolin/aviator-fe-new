@@ -2,11 +2,11 @@ import React from 'react'
 import { Grid, BonusCard } from '@/components'
 import type { BonusEntry } from '@/types'
 
-interface NoDepositBonusGridProps {
+interface BonusesGridProps {
 	bonuses: BonusEntry[]
 }
 
-const NoDepositBonusesGrid: React.FC<NoDepositBonusGridProps> = ({ bonuses }) => {
+const BonusesGrid: React.FC<BonusesGridProps> = ({ bonuses }) => {
 	return (
 		<Grid>
 			{bonuses.map(bonus => (
@@ -23,4 +23,4 @@ const NoDepositBonusesGrid: React.FC<NoDepositBonusGridProps> = ({ bonuses }) =>
 	)
 }
 
-export default NoDepositBonusesGrid
+export default BonusesGrid

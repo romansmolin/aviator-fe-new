@@ -14,7 +14,7 @@ const Home = async () => {
     const { getBonusesByType } = await getServerQuery(GET_BONUSES_BY_TYPE, {
         page: 1,
         number: 9,
-        type: "bestOfTheMonth"
+        type: "best-of-the-month"
     })
 
     return (
