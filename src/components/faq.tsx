@@ -17,8 +17,8 @@ interface FaqProps {
 
 const Faq: React.FC<FaqProps> = ({ questions, heading = "" }) => {
     return (
-        <>
-            <h2 className="text-2xl font-bold mb-4">{`Frequently Asked Question About ${heading}`}</h2><div className="space-y-4">
+        <div className='rounded-xl py-6 border border-dashed px-5'>
+            <h2 className="text-2xl font-bold mb-4">{`Frequently Asked Question ${heading}`}</h2><div className="space-y-4">
                 {questions.map(question => (
                     <Collapsible key={question.label}>
                         <CollapsibleTrigger className="flex items-center justify-between w-full bg-muted px-4 py-3 rounded-md">
@@ -31,7 +31,7 @@ const Faq: React.FC<FaqProps> = ({ questions, heading = "" }) => {
                     </Collapsible>
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 

@@ -8,7 +8,7 @@ interface HeadingTitleProps {
 
 const HeadingTitle: React.FC<HeadingTitleProps> = ({ children, className }) => {
     return (
-        <div className="py-5">
+        <div className="pt-5">
             <h2 className='text-3xl md:text-5xl font-bold text-primary dark:text-white'>{children}</h2>
         </div>
     )

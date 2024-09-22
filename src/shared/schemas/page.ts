@@ -8,6 +8,7 @@ query GetPageContentBySlug($slug: String!) {
       image {
         url
       }
+      position
       content {
         type
         children {
@@ -16,8 +17,8 @@ query GetPageContentBySlug($slug: String!) {
           bold
         }
         faqs {
-          question
-          answer
+          label
+          text
         }
       }
     }

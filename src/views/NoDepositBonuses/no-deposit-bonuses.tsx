@@ -4,6 +4,7 @@ import { GET_BONUSES_BY_TYPE } from '@/shared/schemas/bonuses'
 import NoDepositBonusesGrid from './blocks/no-deposit-bonus-grid'
 import { HeadingTitle, PaginationControl } from '@/components'
 import { GET_PAGE_CONTENT_BY_SLUG } from '@/shared/schemas/page'
+import ContentRenderer from '@/components/renderers/content-renderer'
 
 interface NoDepositBonusesProps {
     page: number
@@ -18,17 +19,16 @@ const NoDepositBonuses: React.FC<NoDepositBonusesProps> = async ({ page, slug })
         "type": "noDepositBonus"
     })
 
-    const { getPageContentBySlug } =  await getServerQuery(GET_PAGE_CONTENT_BY_SLUG, {
+    const { getPageContentBySlug } = await getServerQuery(GET_PAGE_CONTENT_BY_SLUG, {
         "slug": "no-deposit-bonuses"
     })
-
-    console.log(getPageContentBySlug)
 
     return (
         <>
             <HeadingTitle>Best No Deposit Bonuses</HeadingTitle>
             <NoDepositBonusesGrid bonuses={getBonusesByType.bonuses} />
             <PaginationControl totalPages={getBonusesByType.totalPages} currentPage={page} />
+            <ContentRenderer pageContent={getPageContentBySlug.pageContent}/>
         </>
     )
 }

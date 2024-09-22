@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Package2, HomeIcon, Dices, NotebookText, Castle, Star } from 'lucide-react';
+import { Package2 } from 'lucide-react';
 import NavigationLink from './navigation-link';
 import { ModeToggle } from './mode-toggle';
 import { sidebarMenu } from '@/config/menu'

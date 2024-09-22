@@ -1,14 +1,16 @@
 import React from "react";
 import Paragraph from "../paragraph";
 import { StrapiContent } from "@/types";
+import { cn } from "@/shared/lib/cn";
 
 interface TextContentRendererProps {
-    contentData: StrapiContent[]
+    contentData: StrapiContent[],
+    className?: string
 }
 
-const TextContentRenderer: React.FC<TextContentRendererProps> = ({ contentData }) => {
+const TextContentRenderer: React.FC<TextContentRendererProps> = ({ contentData, className }) => {
     return (
-        <div className="flex flex-col rounded-xl py-6 border border-dashed gap-5 w-[100%] bg-clip-border px-5">
+        <div className={cn('flex flex-col rounded-xl py-6 border border-dashed gap-3 w-[100%] bg-clip-border px-5', className)}>
             {contentData.map((item: any, index: number) => {
                 if (item.type === "heading") {
                     return <h3 key={index} id={item.children[0].text} className="text-4xl scroll-my-14 font-bold">{item.children[0].text}</h3>;
