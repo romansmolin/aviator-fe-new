@@ -1,8 +1,6 @@
-import Link from 'next/link';
-import { Menu, Search, CircleUser, Star, ShoppingCart, Package, Users, LineChart, Package2 } from 'lucide-react';
+import { Menu, Search } from 'lucide-react';
 
 import { Button } from './ui/button';
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem } from '@radix-ui/react-dropdown-menu';
 import { Input } from './ui/input';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import NavigationLink from './navigation-link';
@@ -11,7 +9,7 @@ import { ModeToggle } from './mode-toggle';
 
 export default function Header() {
     return (
-        <header className="flex fixed w-full z-50 h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+        <header className="lg:ml-64 flex fixed top-0 left-0 right-0 z-50 h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
             <Sheet>
                 <SheetTrigger asChild>
                     <Button variant="outline" size="icon" className="shrink-0 lg:hidden">
@@ -22,10 +20,10 @@ export default function Header() {
                 <SheetContent side="left" className="flex flex-col">
                     <nav className="grid gap-2 text-lg font-medium">
                         {sidebarMenu.map(item => (
-                            <NavigationLink 
-                                key={item.label} 
-                                href={item.href} 
-                                icon={item.icon} 
+                            <NavigationLink
+                                key={item.label}
+                                href={item.href}
+                                icon={item.icon}
                                 label={item.label}
                             />
                         ))}
@@ -35,8 +33,9 @@ export default function Header() {
                     </div>
                 </SheetContent>
             </Sheet>
-            <div className="w-full flex-1">
-                <form>
+
+            <div className='flex flex-1 items-center gap-5 justify-between'>
+                <form className='flex-1'>
                     <div className="relative">
                         <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                         <Input
@@ -46,23 +45,22 @@ export default function Header() {
                         />
                     </div>
                 </form>
+
+                <div className='flex gap-5'>
+                    <div className='flex justify-center items-center'>
+                        <ModeToggle />
+                    </div>
+
+                    {/* <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button variant="secondary" size="icon" className="rounded-full">
+                                <CircleUser className="h-5 w-5" />
+                                <span className="sr-only">Toggle user menu</span>
+                            </Button>
+                        </DropdownMenuTrigger>
+                    </DropdownMenu> */}
+                </div>
             </div>
-            <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                    <Button variant="secondary" size="icon" className="rounded-full">
-                        <CircleUser className="h-5 w-5" />
-                        <span className="sr-only">Toggle user menu</span>
-                    </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>Settings</DropdownMenuItem>
-                    <DropdownMenuItem>Support</DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>Logout</DropdownMenuItem>
-                </DropdownMenuContent>
-            </DropdownMenu>
         </header>
     );
 }
